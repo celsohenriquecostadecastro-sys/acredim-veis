@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acredimóveis — Móveis e eletros para o seu lar</title>
+<style>
+:root{--bg:#fbfaf7;--surface:#fff;--text:#1d2a33;--muted:#5d6b75;--brand:#0f5c4d;--brand2:#e0a43a;--line:#e5e2da;--on-brand:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10181c;--surface:#18232a;--text:#eef1f2;--muted:#9fb0b8;--brand:#3fb39a;--brand2:#e8b04e;--line:#2a3a43;--on-brand:#0b1a17}}
+:root[data-theme="dark"]{--bg:#10181c;--surface:#18232a;--text:#eef1f2;--muted:#9fb0b8;--brand:#3fb39a;--brand2:#e8b04e;--line:#2a3a43;--on-brand:#0b1a17}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:20px;height:64px}
+.logo{font-weight:800;font-size:1.25rem;color:var(--brand);letter-spacing:-.02em}.logo span{color:var(--brand2)}
+nav{display:flex;gap:18px;margin-left:auto;font-size:.95rem;overflow-x:auto}
+nav a{color:var(--muted);white-space:nowrap}nav a:hover,nav a.on{color:var(--brand)}
+.btn{display:inline-block;border:0;border-radius:10px;padding:11px 20px;font:inherit;font-weight:600;cursor:pointer;background:var(--brand);color:var(--on-brand)}
+.btn.o{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.icon{background:none;border:0;color:var(--text);font-size:1.15rem;cursor:pointer}
+.hero{background:linear-gradient(135deg,#0f5c4d,#12384a 60%,#1d2a33);color:#fff;padding:72px 0 88px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;bottom:-40px;width:420px;height:260px;background:linear-gradient(#ffffff14,#ffffff05);clip-path:polygon(0 100%,0 45%,50% 0,100% 45%,100% 100%)}
+.hero h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;max-width:640px;margin:0 0 28px;letter-spacing:-.02em}
+.search{background:var(--surface);color:var(--text);border-radius:14px;padding:14px;display:grid;grid-template-columns:repeat(3,1fr) auto;gap:10px;max-width:840px;position:relative;z-index:1}
+.search select,.search input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+section{padding:64px 0}h2{font-size:1.7rem;margin:0 0 28px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ph{height:190px;display:flex;align-items:flex-end;padding:12px}
+.tag{background:var(--brand2);color:#1d1a10;font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:99px}
+.card .b{padding:16px 18px 20px}.card h3{margin:0 0 4px;font-size:1.05rem}
+.muted{color:var(--muted);font-size:.92rem}.price{font-size:1.25rem;font-weight:800;color:var(--brand);margin:8px 0 14px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.step{text-align:center;padding:24px 16px;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.step .i{font-size:2rem;width:64px;height:64px;line-height:64px;border-radius:50%;background:color-mix(in srgb,var(--brand) 14%,transparent);margin:0 auto 12px}
+.step h3{margin:0 0 6px;font-size:1.02rem}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.slider{position:relative;max-width:720px;margin:0 auto;text-align:center}
+.slide{display:none;font-size:1.15rem}.slide.on{display:block}.slide small{display:block;margin-top:12px;color:var(--muted);font-size:.9rem}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}.dots button.on{background:var(--brand)}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
+.about .ph{height:280px;border-radius:16px}
+.news{background:var(--brand);color:var(--on-brand);border-radius:20px;padding:40px;text-align:center}
+.news h2{margin-bottom:8px}.news form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.news input{padding:12px 16px;border-radius:10px;border:0;min-width:260px;font:inherit}
+.news .btn{background:var(--brand2);color:#1d1a10}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:.92rem}
+.fgrid{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between}
+.fgrid a:hover{color:var(--brand)}.soc{display:flex;gap:12px}
+.soc a{border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;font-weight:700;font-size:.8rem}
+@media(max-width:760px){.search{grid-template-columns:1fr}.about{grid-template-columns:1fr}.nav{flex-wrap:wrap;height:auto;padding:10px 0}nav{order:5;width:100%;margin:0}.hero{padding:48px 0 56px}.news{padding:28px 18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#">Acredi<span>móveis</span></a>
+<nav><a class="on" href="#">Início</a><a href="#destaques">Móveis</a><a href="#destaques">Eletros</a><a href="#destaques">Ofertas</a><a href="#sobre">Sobre Nós</a><a href="#contato">Contato</a></nav>
+<button class="icon" aria-label="Buscar">🔍</button>
+<a class="btn o" href="#">Entrar / Cadastrar</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+<h1>Móveis e eletros para o lar dos seus sonhos, com confiança e segurança</h1>
+<div class="search">
+<input placeholder="O que você procura? (sofá, geladeira…)" aria-label="Busca">
+<select aria-label="Categoria"><option>Categoria</option><option>Sala</option><option>Quarto</option><option>Cozinha</option><option>Eletrodomésticos</option></select>
+<select aria-label="Preço"><option>Faixa de preço</option><option>Até R$ 500</option><option>R$ 500 a 1.500</option><option>R$ 1.500 a 3.000</option><option>Acima de R$ 3.000</option></select>
+<button class="btn">Buscar Produtos</button>
+</div></div></div>
+
+<section id="destaques"><div class="wrap">
+<h2>Produtos em Destaque</h2>
+<div class="grid" id="cards"></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2>Como funciona?</h2>
+<div class="steps">
+<div class="step"><div class="i">🔎</div><h3>Busca rápida e fácil</h3><p class="muted">Filtre por categoria, ambiente e preço em poucos cliques.</p></div>
+<div class="step"><div class="i">📸</div><h3>Fotos reais e vídeos</h3><p class="muted">Veja medidas, acabamentos e detalhes antes de comprar.</p></div>
+<div class="step"><div class="i">🤝</div><h3>Atendimento personalizado</h3><p class="muted">Nossa equipe ajuda você a escolher, do pedido à entrega.</p></div>
+<div class="step"><div class="i">🔒</div><h3>Compra segura e transparente</h3><p class="muted">Pagamento protegido, prazos de entrega e garantia claros.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2 style="text-align:center">O que nossos clientes dizem</h2>
+<div class="slider" id="slider">
+<div class="slide on">“Montei minha sala inteira em uma semana. Entrega no prazo e produtos iguais às fotos.”<small>— Mariana S., Botafogo</small></div>
+<div class="slide">“A geladeira chegou perfeita e o atendimento tirou todas as minhas dúvidas. Nota dez.”<small>— Carlos E., Barra da Tijuca</small></div>
+<div class="slide">“Comprei fogão e máquina de lavar com segurança e ótimo preço. Recomendo!”<small>— Fernanda L., Tijuca</small></div>
+<div class="dots"></div>
+</div></div></section>
+
+<section class="alt" id="sobre"><div class="wrap about">
+<div><h2>Sobre a Acredimóveis</h2>
+<p><strong>Missão:</strong> deixar cada lar mais confortável, com móveis e eletrodomésticos de qualidade a preço justo.</p>
+<p><strong>Valores:</strong> transparência, respeito e compromisso com cada cliente.</p>
+<p><strong>Diferencial:</strong> uma loja online com atendimento humano, fotos reais e compra acompanhada até a entrega.</p></div>
+<div class="ph" style="background:linear-gradient(135deg,var(--brand),#12384a);align-items:center;justify-content:center;color:#fff;font-weight:600">Foto da equipe / escritório</div>
+</div></section>
+
+<section><div class="wrap"><div class="news">
+<h2>Receba ofertas exclusivas e novidades</h2>
+<p style="margin:0;opacity:.9">Cadastre seu e-mail e saia na frente nas melhores promoções.</p>
+<form onsubmit="event.preventDefault();this.innerHTML='<strong>Obrigado! Inscrição confirmada ✔</strong>'"><input type="email" required placeholder="Seu e-mail" aria-label="E-mail"><button class="btn">Assinar</button></form>
+</div></div></section>
+
+<footer id="contato"><div class="wrap fgrid">
+<div><a class="logo" href="#">Acredi<span>móveis</span></a><p>Av. Exemplo, 1000 — Rio de Janeiro, RJ<br>(21) 0000-0000</p></div>
+<div><strong>Links úteis</strong><br><a href="#">Termos de Uso</a><br><a href="#">Política de Privacidade</a><br><a href="#">Contato</a></div>
+<div><strong>Siga-nos</strong><div class="soc" style="margin-top:8px"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="LinkedIn">in</a></div></div>
+</div></footer>
+
+<script>
+var imoveis=[["Sofá retrátil 3 lugares","Sala · tecido suede · cinza","R$ 1.899","#0f5c4d,#2a8a74"],["Guarda-roupa 6 portas","Quarto · MDF · 2,8 m","R$ 1.490","#12384a,#2d6a8a"],["Mesa de jantar 6 cadeiras","Cozinha · madeira maciça","R$ 2.350","#6b3f1d,#c27b3a"],["Geladeira Frost Free 450 L","Eletro · inox · 127 V","R$ 3.299","#3b3a6b,#6c6bb5"],["Fogão 5 bocas","Eletro · acendimento automático","R$ 1.199","#1d4d2f,#4a9a5f"],["Lavadora 12 kg","Eletro · 12 programas","R$ 2.190","#7a2e3a,#c05a6a"]];
+document.getElementById("cards").innerHTML=imoveis.map(function(i,n){return '<article class="card"><div class="ph" style="background:linear-gradient(135deg,'+i[3].split(",")[0]+','+i[3].split(",")[1]+')">'+(n<2?'<span class="tag">Destaque</span>':'')+'</div><div class="b"><h3>'+i[0]+'</h3><div class="muted">'+i[1]+'</div><div class="price">'+i[2]+'</div><a class="btn o" href="#">Ver Detalhes</a></div></article>'}).join("");
+var s=document.querySelectorAll(".slide"),d=document.querySelector(".dots"),k=0,t;
+s.forEach(function(_,i){var b=document.createElement("button");b.setAttribute("aria-label","Depoimento "+(i+1));b.onclick=function(){go(i);};d.appendChild(b)});
+function go(i){k=i;s.forEach(function(e,j){e.classList.toggle("on",j==i)});d.querySelectorAll("button").forEach(function(e,j){e.classList.toggle("on",j==i)});clearInterval(t);t=setInterval(function(){go((k+1)%s.length)},5000)}
+go(0);
+</script>
+</body>
+</html>
